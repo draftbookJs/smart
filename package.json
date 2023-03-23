@@ -1,0 +1,22 @@
+{
+  "name": "@draftbook/smart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "smart": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "smart": "./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^10.0.0",
+    "dotenv": "^16.0.3"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  }
+}
