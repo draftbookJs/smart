@@ -4,9 +4,11 @@ const readline = require('readline');
 const { spawn } = require('child_process');
 const { getAPIResponse } = require('./chatgpt');
 const { checkEnv, changeEnv } = require('./checkEnv');
+const { version } = require('./package.json');
+
 
 program
-    .version('1.0.0')
+    .version(version)
     .description('A simple CLI tool')
     .arguments('<request>', 'Enter you request:')
     .option('-u, --url <url>', 'set the OpenAI API base URL, default: https://api.openai.com')
@@ -30,7 +32,8 @@ program
 
             getAPIResponse(request, apiKey)
                 .then((command) => {
-                    rl.question(`是否执行推荐命令(Y/n):\n  ${command.replace(/^\s+/g, '')}\n`, (answer) => {
+                    command = command.replace(/^\s*['"]|['"]\s*$/g, '').trim();
+                    rl.question(`是否执行推荐命令(Y/n):\n  ${command}\n`, (answer) => {
                         if (answer === 'y' || answer === 'Y' || answer === '') {
                             const child = spawn(command, { shell: true });
                             child.stdout.pipe(process.stdout);

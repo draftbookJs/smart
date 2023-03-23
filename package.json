@@ -1,6 +1,6 @@
 {
   "name": "@draftbook/smart",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,9 @@
   "engines": {
     "node": ">=10.0.0",
     "npm": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/draftbookJs/smart.git"
   }
 }
